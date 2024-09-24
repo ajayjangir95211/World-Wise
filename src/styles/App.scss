@@ -1,0 +1,63 @@
+@use "common" as *;
+@use "nav" as *;
+@use "map" as *;
+@use "places" as *;
+@use "form" as *;
+
+#root {
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background: $color-dark;
+}
+
+#root.home {
+  background: linear-gradient(
+      rgba($color-dark, 0.75),
+      rgba($color-dark, 0.8725)
+    ),
+    url("../images/bg.jpg") no-repeat center/cover;
+}
+
+section {
+  overflow: auto;
+  padding: 1% 2%;
+  display: grid;
+  align-content: start;
+  gap: 5rem;
+
+  h2,
+  h1 {
+    text-align: center;
+  }
+  p {
+    padding: 3% 5%;
+  }
+}
+
+section.homepage {
+  align-content: center;
+  justify-items: center;
+}
+
+@media (min-width: 987px) {
+  section {
+    grid-template-columns: 1fr 1fr;
+
+    > * {
+      overflow: hidden;
+      @include flex-center;
+      flex-direction: column;
+    }
+  }
+
+  section.homepage > * {
+    grid-column: 1/-1;
+  }
+
+  section.place-marker {
+    grid-template-columns: 3fr 2fr;
+    align-content: stretch;
+  }
+}

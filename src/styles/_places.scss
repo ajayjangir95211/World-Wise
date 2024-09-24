@@ -1,0 +1,54 @@
+@use "common" as *;
+
+.places {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  padding: 2% 3%;
+}
+
+.place {
+  cursor: pointer;
+  font-weight: 600;
+  background-color: rgba(#ffffff, 0.125);
+  padding: 2rem 3rem;
+  border-radius: 256rem;
+  border-left: #00c46a solid 2px;
+  display: flex;
+  width: 100%;
+  max-width: 89rem;
+  gap: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  .btn-remove {
+    padding: 0;
+    font-size: 5rem;
+    border-radius: 50%;
+    width: 6.5rem;
+    height: 6.5rem;
+    color: rgba(255, 0, 0);
+    background-color: #fff;
+
+    &:hover {
+      background-color: rgba(255, 0, 0);
+      color: #fff;
+    }
+  }
+}
+
+.active-place {
+  border: #00c46a solid 2px;
+  transform: scale(1.0625);
+}
+
+@media (min-width: 987px) {
+  .places {
+    overflow: auto;
+    justify-content: start;
+  }
+}

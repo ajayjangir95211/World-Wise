@@ -1,0 +1,76 @@
+@use "common" as *;
+
+nav {
+  justify-self: stretch;
+  padding: 2% 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  position: relative;
+}
+
+.logo {
+  width: 34rem;
+}
+
+.hamburger {
+  height: 8rem;
+  font-size: 5rem;
+  z-index: 99;
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+.nav-links.row {
+  display: flex;
+  gap: 3rem;
+
+  .nav-link {
+    border-radius: 265rem;
+    padding: 2rem 3rem;
+    background-color: rgba(#fff, 0.25);
+
+    &:hover {
+      background-color: rgba(#fff, 0.125);
+    }
+  }
+}
+
+.nav-links.col {
+  z-index: 1111;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  color: #000;
+  background-color: #fff;
+  border-top-left-radius: 3rem;
+  transition: all 0.5s;
+  overflow: hidden;
+
+  .nav-link {
+    width: 100%;
+    display: inline-block;
+    padding: 5rem 8rem;
+
+    &:hover {
+      background-color: rgba($color-dark, 0.25);
+    }
+  }
+}
+
+.nav-links.col.hidden {
+  width: 0;
+}
+
+.nav-links.col.visible {
+  width: 37.25%;
+}

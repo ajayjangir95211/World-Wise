@@ -1,0 +1,42 @@
+@use "common" as *;
+
+.map {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+}
+
+.leaflet-popup {
+  //   filter: blur(5px);
+  font-size: 3rem;
+}
+
+.btn-location {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 3rem;
+  color: #fff;
+  background-color: rgba($color: #3187cc, $alpha: 0.5);
+  position: absolute;
+  z-index: 9999;
+
+  &:hover {
+    background-color: rgba($color: #3187cc, $alpha: 1);
+  }
+}
+
+@media (min-width: 610px) {
+  .map {
+    width: 75%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 987px) {
+  .map {
+    width: 100%;
+    aspect-ratio: auto;
+    height: 100%;
+  }
+}
